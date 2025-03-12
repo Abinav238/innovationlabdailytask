@@ -1,0 +1,26 @@
+class Computer {
+    class Processor {
+        void process() {
+            System.out.println("Processor is working...");
+        }
+    }
+
+    void startComputer() {
+        class RAM {
+            void load() {
+                System.out.println("RAM is loading data...");
+            }
+        }
+        new RAM().load();
+    }
+}
+
+public class InnerAnonymousExample {
+    public static void main(String[] args) {
+        Computer computer = new Computer();
+        computer.new Processor().process();
+        computer.startComputer();
+
+        new Thread(() -> System.out.println("Anonymous inner class running...")).start();
+    }
+}
